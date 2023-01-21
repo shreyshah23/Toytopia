@@ -1,0 +1,11 @@
+.product-item{
+    cursor: pointer;
+}
+
+.car-img{
+    max-height: 40vw;
+}
+
+.carousel-control-next, .carousel-control-prev{
+    width: 10%;
+}

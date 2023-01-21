@@ -1,0 +1,21 @@
+.container{
+  padding: 0;
+  margin: 0;
+}
+.bg-dark{
+  background-color: #232323 !important;
+  color: #fff !important;
+}
+
+.bg-light{
+  background-color: #fff !important;
+  color: #D12B1D !important;
+}
+
+.navbar{
+  padding-top: 15px;
+}
+
+.d-block{
+  height: 40% !important;
+}

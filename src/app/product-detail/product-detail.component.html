@@ -1,0 +1,150 @@
+<div class="container" style="overflow: hidden;">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-12"><img class="img-fluid" style="box-shadow: 5px 10px 5px #F3EEEE;"
+            src='{{selectedImage}}' alt=""></div>
+      </div>
+      <div class="row" style="overflow-x: auto; overflow-y: hidden;">
+        <div class="col-md-12">
+          <table>
+            <tr class="d-flex w-100 pt-2">
+              <td *ngFor="let image of images; index as i" class="justify-content-center aligh-items-center">
+                <img src='{{image }}' width="120" height="100"
+                  style="box-shadow: 5px 10px 5px #F3EEEE; cursor: pointer;"
+                  [ngClass]="{'activeImage':selectedImage==images[i]}" (click)="changeImage(i)" />
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mt-5 container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="h1">{{product[0].productName}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p class="h6"><span class="badge badge-secondary">{{product[0].category}}</span></p>
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col-md-12">
+          <p class="h6">Product Tag Line</p>
+        </div>
+      </div> -->
+      <div class="row">
+        <div class="col-md-12">
+          <p class="h3">${{product[0].price.toFixed(2)}}</p>
+        </div>
+      </div>
+      <!-- <div class="row add-to-cart">
+        <div class="col-md-8 product-qty">
+          <span class="btn btn-default btn-lg btn-qty">
+            <span class="fa fa-plus" aria-hidden="true"></span>
+          </span>
+          <input class="btn btn-default btn-lg btn-qty" value="1" />
+          <span class="btn btn-default btn-lg btn-qty">
+            <span class="fa fa-minus" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-lg btn-brand btn-full-width">
+            Add to Cart
+          </button>
+        </div>
+      </div> -->
+      <div class="row">
+        <div class="col-md-10">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" style="color: #D12B1D;" id="description-tab" data-toggle="tab"
+                href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
+            </li>
+            <li *ngIf="product[0].features!=''" class="nav-item">
+              <a class="nav-link" id="features-tab" style="color: #D12B1D;" data-toggle="tab" href="#features"
+                role="tab" aria-controls="features" aria-selected="false">Features</a>
+            </li>
+            <li *ngIf="(product[0].dimension!='' && product[0].dimension!='-') || product[0].madeOf!=''"
+              class="nav-item">
+              <a class="nav-link" id="dimensions-tab" style="color: #D12B1D;" data-toggle="tab" href="#dimensions"
+                role="tab" aria-controls="dimensions" aria-selected="false">Dimensions</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-10 mt-2 text-justify">
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+              <!-- {{product[0].description}} -->
+              <h3 *ngFor="let des of product[0].description.split('\\n'); index as i">{{des}}</h3>
+            </div>
+            <div class="tab-pane fade" id="features" role="tabpanel" aria-labelledby="features-tab">
+              <ul class="list-group">
+                <li class="list-group-item"
+                  *ngFor="let feature of product[0].features.replace('\r\n','').split('~ '); index as i">
+                  {{feature.replace('~','')}}</li>
+              </ul>
+            </div>
+            <div class="tab-pane fade" id="dimensions" role="tabpanel" aria-labelledby="dimensions-tab">
+              <table class="table table-striped table-bordered">
+                <tr>
+                  <th>Made of</th>
+                  <td>
+                <tr *ngFor="let made of product[0].madeOf.split('\r\n'); index as i">
+                  <td style="border: none; margin: 0%; padding: 0%; padding-top: 1%;">{{made}}</td>
+                </tr>
+                </td>
+                </tr>
+                <tr
+                  *ngFor="let dimension of product[0].dimension.replace('-','').replace('cm','').split('×'); index as i">
+                  <th *ngIf="i==0">
+                    Length
+                  </th>
+                  <th *ngIf="i==1">
+                    Width
+                  </th>
+                  <th *ngIf="i==2">
+                    Height
+                  </th>
+                  <td>
+                    {{dimension}} cm
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <p class="h4">Related Products</p>
+    </div>
+  </div>
+  <div class="row" style="overflow-x: auto;">
+    <!-- <div class="row"> -->
+    <div class="col-md-6">
+      <table>
+        <tr>
+          <td *ngFor="let relPrd of relatedProducts; index as i" class="pl-2">
+            <div (click)="setData(relPrd)" style="box-shadow: 2px 25px 2px 2px #F3EEEE;cursor: pointer;"><img
+                src='{{relPrd["420Path"][0] }}' [alt]="relPrd.productName" width="50"
+                height="50" class="img-thumbnail" />
+              <div class="border-top row pl-4">
+                <p class="m-0 p-0 text-left text-primary" style="font-weight: 300px;">{{relPrd.productName}}</p>
+              </div>
+              <div class="row pl-4">
+                <p class="m-0 p-0 font-weight-bold">&#8377; {{relPrd.price.toFixed(2)}}</p>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+    </div>
+    <!-- </div> -->
+  </div>
+</div>

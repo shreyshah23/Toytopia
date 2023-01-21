@@ -1,0 +1,81 @@
+<div class="h-100" style="position: inherit; display: block;">
+  <!-- Page Content -->
+  <div class="page-heading products-heading header-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="text-content centered">
+            <h2>new arrivals</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="products">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- <div class="filters">
+            <ul>
+              <li [ngClass]="{'active':selectedCategory=='All'}" (click)="changeCategory('All')" data-filter="*">All
+                Products</li>
+              <li [ngClass]="{'active':selectedCategory=='Learning & Education'}"
+                (click)="changeCategory('Learning & Education')" data-filter=".des">Learning Toys</li>
+              <li [ngClass]="{'active':selectedCategory=='Teethers'}" (click)="changeCategory('Teethers')"
+                data-filter=".dev">Teethers</li>
+              <li [ngClass]="{'active':selectedCategory=='Push & Pull'}" (click)="changeCategory('Push & Pull')"
+                data-filter=".gra">Push & Pull Toys</li>
+              <li [ngClass]="{'active':selectedCategory=='3D Puzzle'}" (click)="changeCategory('3D Puzzle')"
+                data-filter=".gra">3D Puzzles</li>
+            </ul>
+          </div> -->
+        </div>
+        <div class="col-md-12">
+          <div class="filters-content">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 des dev gra" *ngFor="let product of products">
+                <div class="product-item" style="width: 250px; height: 300px;" (click)="setData(product)">
+                  <a><img class="border-bottom img-fluid" src='{{product["420Path"][0] }}' width="200" height="275"
+                      alt="{{product.modelNo}}"></a>
+                  <div class="down-content p-0 pt-2 pl-4">
+                    <div class="row">
+                      <div class="col-md-8">
+                        <p class="h5">{{product.productName}}</p>
+                      </div>
+                      <div class="col-md-4 text-dark font-weight-bold">
+                        <p class="h6" style="color: black; font-weight: bold;">${{product.price.toFixed(2)}}
+                        </p>
+                      </div>
+                    </div>
+                    <a>
+
+                    </a>
+                    <!-- <h6>&#8377;{{product.price}}</h6> -->
+                    <p>{{product.description.split('\n')[-1]}}</p>
+                    <!-- <ul class="stars">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                          </ul>
+                          <span>Reviews ({{product.reviews}})</span> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-md-12">
+            <ul class="pages">
+              <li><a href="#">1</a></li>
+              <li class="active"><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+            </ul>
+          </div> -->
+      </div>
+    </div>
+  </div>
+</div>

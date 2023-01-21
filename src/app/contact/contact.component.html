@@ -1,0 +1,104 @@
+    <!-- Page Content -->
+    <div class="page-heading contact-heading header-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-content">
+              <h4>contact us</h4>
+              <h2>let’s get in touch</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="find-us">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading text-center">
+              <h1>Our Location on Maps</h1>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div id="map">
+              
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.8094340172283!2d-79.3927909845398!3d43.6729329791206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34af450fe0d9%3A0xd02303a0b20f951!2s1599%20Bay%20St.%2C%20Toronto%2C%20ON!5e0!3m2!1sen!2sca!4v1669904841940!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <!-- width="100%" height="330px" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="left-content">
+              <div>
+                <h4><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;Address</h4>
+                <p>1599 Bay Street,Toronto,Ontario,Canada</p>
+              </div>
+              <div>
+                <h4><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;Phone</h4>
+                <p>+1-4379738174</p>
+              </div>
+              <div>
+                <h4><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;E-mail</h4>
+                <a href="mailto:info@tinytoys.com">
+                  <p>info@tinytoys.com</p>
+                </a>
+              </div>
+              <!-- <ul class="social-icons">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+              </ul> -->
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 mt-5">
+            <div class="section-heading text-center">
+              <h1>SEND US A MESSAGE</h1>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="contact-form">
+              <form [formGroup]="form" class="" (ngSubmit)="onSubmit()" method="post">
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName="userName" id="name"
+                    aria-describedby="fullName" placeholder="Full Name">
+                  <div *ngIf="isSubmitted && f.userName.errors" class="invalid-feedback">
+                    <div *ngIf="f.userName.errors.required">Name is required</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" formControlName="email" id="email"
+                    placeholder="E-Mail Address">
+                  <div *ngIf="isSubmitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">E-Mail address is required</div>
+                    <div *ngIf="f.email.errors.email">E-Mail address is not valid</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName="subject" id="subject" placeholder="Subject">
+                  <div *ngIf="isSubmitted && f.subject.errors" class="invalid-feedback">
+                    <div *ngIf="f.subject.errors.required">Subject is required</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" id="message" formControlName="message" rows="5"
+                    placeholder="Your Message"></textarea>
+                  <div *ngIf="isSubmitted && f.message.errors" class="invalid-feedback">
+                    <div *ngIf="f.message.errors.required">Please enter some message</div>
+                  </div>
+                </div>
+                <div class="w-100 text-center">
+                  <button type="submit" class="btn btn-danger">Send Us A Message</button>
+                </div>
+                <!-- <button type="button" class="btn btn-danger" (click)="click()">Testing</button> -->
+              </form>
+            </div>
+          </div>
+
+
+    <div class="send-message">
+      <div class="container">
+
+      </div>
+    </div>

@@ -1,0 +1,19 @@
+div.quote{
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 35px;
+    -webkit-text-stroke: thin;
+}
+/* div.aboutus-content{
+float: left;
+
+} */
+
+.f-17{
+    font-size: 17px;
+}
+
+.border-bottom{
+    border-bottom: 1px solid #eee !important;
+    padding-bottom: 50px !important;
+}

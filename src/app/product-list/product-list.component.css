@@ -1,0 +1,7 @@
+.product-item{
+    cursor: pointer;
+}
+
+.active{
+    border-bottom: 1px solid #D12B1D;
+}
